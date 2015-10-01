@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]>    <html lang="en" class="unsupported-browser"> <![endif]-->
+<!--[if gt IE 7]><!--> 
+<html lang="en"> 
+<!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="freeAPRegistration_files/favicon.png">
+
+    <title>Entitlement Key Registration</title>
+
+<link rel="stylesheet" href="freeAPRegistration_files/bootstrap.css" />
+<link rel="stylesheet" href="freeAPRegistration_files/free-ap-style.css" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="freeAPRegistration_files/bootstrap.js"></script>
+
+</head>
+
+<body>
+<div class="line free-ap-registration">
+	<!--[if lt IE 9]>    
+		<div class="panel panel-default">
+			<div class="panel-heading">Unsupported Browser</div>
+			<div class="panel-body">
+		    	Please update your browser to register.
+		  	</div>
+		</div> 
+	<![endif]-->
+	<div class="header">
+ 		<div class="container">
+ 			<div class="AH-logo span2"><img src="freeAPRegistration_files/AH-logo.png" alt="Aerohive Network"/></div>
+ 			<div class="AH-website-btn span3" style="float: right; margin-top: 20px;"><a href="http://www.aerohive.com" class="btn btn-sm btn-info btn-block" type="submit" target="_blank">Visit Aerohive.com</a></div>
+ 		</div>
+ 	</div>
+</div>
+ 	<div class="free-ap-registration container">
+        <div class="line clearfix">
+        <br />
+        	<h1>Welcome to Aerohive</h1>
+        </div>	
+        <hr />
+        
+        <div class="line clearfix">
+        	<div class="col-left">
+        	<h2>Requesting your Entitlement Key-Three Steps</h2>
+       			<p>
+       				An Entitlement Key is required to onboard your Free AP onto HiveManager NG. 
+       			</p>
+       			<p>
+       			<b>Step 1&#41;</b> Please complete the form to the right and click submit. 
+       			</p>
+       			<p>
+       			<b>Step 2&#41;</b> You will receive an email with your entitlement key.<ul class="b"><li>Each device will be assigned one entitlement key that<br/>is valid for 3 years.</li></ul>
+       			</p>
+       			<p>
+       			<b>Step 3&#41;</b> Once your Entitlement Key is generated, you can apply the entitlement key by clicking on the gear icon in the upper right corner.
+       			</p>
+       			<p>
+       			If you should have questions, or require assistance please send an email to: <a href="mailto:freeaps@aerohive.com">freeaps@aerohive.com</a>.
+       			</p>
+       			<p>
+       			<font size="1">Note: your entitlement key will generate within 20 minutes or less.</font>
+       			</p>
+			</div>
+			
+			<div class="col-right">
+				<form id="registration-form" class="offset1 register-form">
+		
+				<h2 style="color: #beb9aa;">Entitlement Key Registration for NG</h2>
+		
+				   <table class="ap-registration-form">
+						<tr class="form-group">
+							<td class="span2 last"><label class="control-label">First Name<span class="star-important"> *</span></label></td>
+							<td class="span5 last"><input id="first-name-field" type="text" class="form-control span4 required-field" placeholder="" required></td>
+						</tr>
+						<tr class="form-group">
+							<td class="span2 last"><label class="control-label">Last Name<span class="star-important"> *</span></label></td>
+							<td class="span5 last"><input id="last-name-field" type="text" class="form-control span4 required-field" placeholder="" required></td>
+						</tr>
+						<tr class="form-group validation-with-callback">
+							<td class="span2 last"><label class="control-label">Email Address<span class="star-important"> *</span></label></td>
+							<td class="span5 last"><input type="email" id="email-field" class="form-control span4 required-field" placeholder="" required>
+							<span class="error-msg span4 hidden" id="email-error" style="font-size: 12px; line-height: 14px;"><img src="freeAPRegistration_files/error-icon.png" alt=""/><span class="exists">The email address is already in use. Please enter a different one.</span>
+							<span class="invalid">Please enter a valid email address.</span>
+							</td>
+						</tr>
+						<tr class="form-group validation-with-callback">
+							<td class="span2 last"><label class="control-label" style="line-height: 14px;">Serial Number <span class="star-important"> *</span><br/><small style="font-weight: normal;">(14 digits)</small></label></td>
+							<td class="span5 last"><input maxlength="14" id="serial-field" class="form-control span4 required-field" placeholder="" required>
+							<span id="serial-error" class="error-msg span4 hidden" style="font-size: 12px; line-height: 14px;"><img src="freeAPRegistration_files/error-icon.png" alt=""/><span class="exists">The serial number is already associated with another account. Please check that it is correct. If it is, contact Aerohive Technical Support for assistance.</span>
+							<span class="invalid">Please enter a valid serial number.</span>
+							<span class="fail">Serial Number validation failed. To try again, please check and re-enter the device Serial Number for FreeAP.</span>
+							</span></td>
+						</tr>
+						<tr class="form-group">
+							<td class="span2 last"><label class="control-label">Company Name<span class="star-important"> *</span></label></td>
+							<td class="span5 last"><input id="company-name-field" type="text" class="form-control span4 required-field" placeholder="" required></td>
+						</tr>
+						<!-- <tr class="form-group">
+							<td class="span2 last"><label class="control-label">Job Title<span class="star-important"> *</span></label></td>
+							<td class="span5 last"><input id="job-title-field" type="text" class="form-control span4 required-field" placeholder="" required></td>
+						</tr>
+						<tr>
+							<td class="span2 last"><label>Industry</label></td>
+							<td class="span5 last">
+								<select id="industry-type-field" class="form-control span4">
+									<option value='Please Select' selected='selected'>Please Select</option>
+									<option value='Education - Higher Ed'>Education - Higher Ed</option>
+									<option value='Education - Primary/Secondary'>Education - Primary/Secondary</option>
+									<option value='Enterprise'>Enterprise</option>
+									<option value='Emergency Services'>Emergency Services</option>
+									<option value='Finance'>Finance</option>
+									<option value='Government - Federal'>Government - Federal</option>
+									<option value='Government - Local &amp; State'>Government - Local &amp; State</option>
+									<option value='Healthcare'>Healthcare</option>
+									<option value='Hospitality'>Hospitality</option>
+									<option value='Legal'>Legal</option>
+									<option value='Manufacturing/Industrial'>Manufacturing/Industrial</option>
+									<option value='Media'>Media</option>
+									<option value='Other'>Other</option>
+									<option value='Reseller/Distributor'>Reseller/Distributor</option>
+									<option value='Retail'>Retail</option>
+									<option value='Systems Integrator'>Systems Integrator</option>
+									<option value='Technology'>Technology</option>
+									<option value='Utilities'>Utilities</option>
+								</select>
+							</td>
+						</tr>
+						<tr class="form-group">
+							<td class="span2 last"><label class="control-label">Phone Number<span class="star-important"> *</span></label></td>
+							<td class="span5 last"><input id="phone-number-field" type="tel" class="form-control span4 required-field" placeholder="" required></td>
+						</tr>
+						<tr class="form-group">
+							<td class="span2 last"><label class="control-label">Country<span class="star-important"> *</span></label></td>
+							<td class="span5 last">
+								<select id="country-name-field" class="form-control span4 required-field">
+									<option value='Please Select'>Please Select</option>
+									<option value='United States' selected>United States</option>
+									<option value='Canada'>Canada</option>
+									<option value='--------------'>--------------</option>
+									<option value='Albania'>Albania</option>
+									<option value='Algeria'>Algeria</option>
+									<option value='Andorra'>Andorra</option>
+									<option value='Angola'>Angola</option>
+									<option value='Antigua'>Antigua</option>
+									<option value='Argentina'>Argentina</option>
+									<option value='Armenia'>Armenia</option>
+									<option value='Australia'>Australia</option>
+									<option value='Austria'>Austria</option>
+									<option value='Azerbaijan'>Azerbaijan</option>
+									<option value='Bahamas'>Bahamas</option>
+									<option value='Bahrain'>Bahrain</option>
+									<option value='Bangladesh'>Bangladesh</option>
+									<option value='Barbados'>Barbados</option>
+									<option value='Belarus'>Belarus</option>
+									<option value='Belgium'>Belgium</option>
+									<option value='Belize'>Belize</option>
+									<option value='Bolivia'>Bolivia</option>
+									<option value='Botswana'>Botswana</option>
+									<option value='Brazil'>Brazil</option>
+									<option value='Brunei'>Brunei</option>
+									<option value='Bulgaria'>Bulgaria</option>
+									<option value='Burkina'>Burkina</option>
+									<option value='Burundi'>Burundi</option>
+									<option value='Cambodia'>Cambodia</option>
+									<option value='Cameroon'>Cameroon</option>
+									<option value='Cape Verde'>Cape Verde</option>
+									<option value='Central African Rep'>Central African Rep</option>
+									<option value='Chad'>Chad</option>
+									<option value='Chile'>Chile</option>
+									<option value='China'>China</option>
+									<option value='Colombia'>Colombia</option>
+									<option value='Comoros'>Comoros</option>
+									<option value='Congo'>Congo</option>
+									<option value='Congo-Democratic Rep'>Congo-Democratic Rep</option>
+									<option value='Costa Rica'>Costa Rica</option>
+									<option value='Croatia'>Croatia</option>
+									<option value='Cuba'>Cuba</option>
+									<option value='Cyprus'>Cyprus</option>
+									<option value='Czech Republic'>Czech Republic</option>
+									<option value='Denmark'>Denmark</option>
+									<option value='Djibouti'>Djibouti</option>
+									<option value='Dominica'>Dominica</option>
+									<option value='Dominican Republic'>Dominican Republic</option>
+									<option value='East Timor'>East Timor</option>
+									<option value='Ecuador'>Ecuador</option>
+									<option value='Egypt'>Egypt</option>
+									<option value='El Salvador'>El Salvador</option>
+									<option value='Equatorial Guinea'>Equatorial Guinea</option>
+									<option value='Eritrea'>Eritrea</option>
+									<option value='Estonia'>Estonia</option>
+									<option value='Ethiopia'>Ethiopia</option>
+									<option value='Fiji'>Fiji</option>
+									<option value='Finland'>Finland</option>
+									<option value='France'>France</option>
+									<option value='Gabon'>Gabon</option>
+									<option value='Gambia'>Gambia</option>
+									<option value='Georgia'>Georgia</option>
+									<option value='Germany'>Germany</option>
+									<option value='Ghana'>Ghana</option>
+									<option value='Greece'>Greece</option>
+									<option value='Grenada'>Grenada</option>
+									<option value='Guatemala'>Guatemala</option>
+									<option value='Guinea'>Guinea</option>
+									<option value='Guinea-Bissau'>Guinea-Bissau</option>
+									<option value='Guyana'>Guyana</option>
+									<option value='Haiti'>Haiti</option>
+									<option value='Honduras'>Honduras</option>
+									<option value='Hungary'>Hungary</option>
+									<option value='Iceland'>Iceland</option>
+									<option value='India'>India</option>
+									<option value='Indonesia'>Indonesia</option>
+									<option value='Iran'>Iran</option>
+									<option value='Iraq'>Iraq</option>
+									<option value='Ireland-Republic'>Ireland-Republic</option>
+									<option value='Israel'>Israel</option>
+									<option value='Italy'>Italy</option>
+									<option value='Ivory Coast'>Ivory Coast</option>
+									<option value='Jamaica'>Jamaica</option>
+									<option value='Japan'>Japan</option>
+									<option value='Jordan'>Jordan</option>
+									<option value='Kazakhstan'>Kazakhstan</option>
+									<option value='Kenya'>Kenya</option>
+									<option value='Kiribati'>Kiribati</option>
+									<option value='Korea North'>Korea North</option>
+									<option value='Korea South'>Korea South</option>
+									<option value='Kosovo'>Kosovo</option>
+									<option value='Kuwait'>Kuwait</option>
+									<option value='Kyrgyzstan'>Kyrgyzstan</option>
+									<option value='Laos'>Laos</option>
+									<option value='Latvia'>Latvia</option>
+									<option value='Lebanon'>Lebanon</option>
+									<option value='Lesotho'>Lesotho</option>
+									<option value='Liberia'>Liberia</option>
+									<option value='Libya Liechtenstein'>Libya Liechtenstein</option>
+									<option value='Lithuania'>Lithuania</option>
+									<option value='Luxembourg'>Luxembourg</option>
+									<option value='Macedonia'>Macedonia</option>
+									<option value='Madagascar'>Madagascar</option>
+									<option value='Malawi'>Malawi</option>
+									<option value='Malaysia'>Malaysia</option>
+									<option value='Maldives'>Maldives</option>
+									<option value='Mali'>Mali</option>
+									<option value='Malta'>Malta</option>
+									<option value='Marshall Islands'>Marshall Islands</option>
+									<option value='Mauritania'>Mauritania</option>
+									<option value='Mauritius'>Mauritius</option>
+									<option value='Mexico'>Mexico</option>
+									<option value='Micronesia'>Micronesia</option>
+									<option value='Moldova'>Moldova</option>
+									<option value='Monaco'>Monaco</option>
+									<option value='Mongolia'>Mongolia</option>
+									<option value='Montenegro'>Montenegro</option>
+									<option value='Morocco'>Morocco</option>
+									<option value='Mozambique'>Mozambique</option>
+									<option value='Myanmar-Burma'>Myanmar-Burma</option>
+									<option value='Namibia'>Namibia</option>
+									<option value='Nauru'>Nauru</option>
+									<option value='Nepal'>Nepal</option>
+									<option value='Netherlands'>Netherlands</option>
+									<option value='New Zealand'>New Zealand</option>
+									<option value='Nicaragua'>Nicaragua</option>
+									<option value='Niger'>Niger</option>
+									<option value='Nigeria'>Nigeria</option>
+									<option value='Norway'>Norway</option>
+									<option value='Oman'>Oman</option>
+									<option value='Pakistan'>Pakistan</option>
+									<option value='Palau'>Palau</option>
+									<option value='Panama'>Panama</option>
+									<option value='Papua New Guinea'>Papua New Guinea</option>
+									<option value='Paraguay'>Paraguay</option>
+									<option value='Peru'>Peru</option>
+									<option value='Philippines'>Philippines</option>
+									<option value='Poland'>Poland</option>
+									<option value='Portugal'>Portugal</option>
+									<option value='Qatar'>Qatar</option>
+									<option value='Romania'>Romania</option>
+									<option value='Russia'>Russia</option>
+									<option value='Rwanda'>Rwanda</option>
+									<option value='St Kitts &amp; Nevis'>St Kitts &amp; Nevis</option>
+									<option value='St Lucia'>St Lucia</option>
+									<option value='Saint Vincent &amp; the Grenadines'>Saint Vincent &amp; the Grenadines</option>
+									<option value='Samoa'>Samoa</option>
+									<option value='San Marino'>San Marino</option>
+									<option value='Saudi Arabia'>Saudi Arabia</option>
+									<option value='Senegal'>Senegal</option>
+									<option value='Serbia'>Serbia</option>
+									<option value='Seychelles'>Seychelles</option>
+									<option value='Singapore'>Singapore</option>
+									<option value='Slovakia'>Slovakia</option>
+									<option value='Slovenia'>Slovenia</option>
+									<option value='Solomon Islands'>Solomon Islands</option>
+									<option value='Somalia'>Somalia</option>
+									<option value='South Africa'>South Africa</option>
+									<option value='Spain'>Spain</option>
+									<option value='Sri Lanka'>Sri Lanka</option>
+									<option value='Sudan'>Sudan</option>
+									<option value='Sweden'>Sweden</option>
+									<option value='Switzerland'>Switzerland</option>
+									<option value='Syria'>Syria</option>
+									<option value='Taiwan'>Taiwan</option>
+									<option value='Tanzania'>Tanzania</option>
+									<option value='Thailand'>Thailand</option>
+									<option value='Trinidad &amp; Tobago'>Trinidad &amp; Tobago</option>
+									<option value='Tunisia'>Tunisia</option>
+									<option value='Turkey'>Turkey</option>
+									<option value='Uganda'>Uganda</option>
+									<option value='Ukraine'>Ukraine</option>
+									<option value='United Arab Emirates'>United Arab Emirates</option>
+									<option value='United Kingdom'>United Kingdom</option>
+									<option value='Uruguay'>Uruguay</option>
+									<option value='Uzbekistan'>Uzbekistan</option>
+									<option value='Vanuatu'>Vanuatu</option>
+									<option value='Vatican City'>Vatican City</option>
+									<option value='Venezuela'>Venezuela</option>
+									<option value='Vietnam'>Vietnam</option>
+									<option value='Yemen'>Yemen</option>
+									<option value='Zambia'>Zambia</option>
+									<option value='Zimbabwe'>Zimbabwe</option>
+								</select>
+							</td>
+						</tr>
+						<tr class="form-group">
+							<td class="span2 last"><label class="control-label">State<span class="star-important"> *</span></label></td>
+							<td class="span5 last">
+								<select id="state-name-field" class="form-control span4 required-field">
+									<option value='Please Select' selected='selected'>Please Select</option>
+									<option value='NA'>Not applicable</option>
+									<option value='AB'>AB</option>
+									<option value='AK'>AK</option>
+									<option value='AL'>AL</option>
+									<option value='AR'>AR</option>
+									<option value='AZ'>AZ</option>
+									<option value='BC'>BC</option>
+									<option value='CA'>CA</option>
+									<option value='CO'>CO</option>
+									<option value='CT'>CT</option>
+									<option value='DE'>DE</option>
+									<option value='FL'>FL</option>
+									<option value='GA'>GA</option>
+									<option value='HI'>HI</option>
+									<option value='IA'>IA</option>
+									<option value='ID'>ID</option>
+									<option value='IL'>IL</option>
+									<option value='IN'>IN</option>
+									<option value='KS'>KS</option>
+									<option value='KY'>KY</option>
+									<option value='LA'>LA</option>
+									<option value='MA'>MA</option>
+									<option value='MB'>MB</option>
+									<option value='MD'>MD</option>
+									<option value='ME'>ME</option>
+									<option value='MI'>MI</option>
+									<option value='MN'>MN</option>
+									<option value='MO'>MO</option>
+									<option value='MS'>MS</option>
+									<option value='MT'>MT</option>
+									<option value='NB'>NB</option>
+									<option value='NC'>NC</option>
+									<option value='ND'>ND</option>
+									<option value='NE'>NE</option>
+									<option value='NH'>NH</option>
+									<option value='NJ'>NJ</option>
+									<option value='NL'>NL</option>
+									<option value='NM'>NM</option>
+									<option value='NT'>NT</option>
+									<option value='NV'>NV</option>
+									<option value='NY'>NY</option>
+									<option value='OH'>OH</option>
+									<option value='OK'>OK</option>
+									<option value='ON'>ON</option>
+									<option value='OR'>OR</option>
+									<option value='PA'>PA</option>
+									<option value='QC'>QC</option>
+									<option value='RI'>RI</option>
+									<option value='SC'>SC</option>
+									<option value='SD'>SD</option>
+									<option value='SK'>SK</option>
+									<option value='TN'>TN</option>
+									<option value='TX'>TX</option>
+									<option value='UT'>UT</option>
+									<option value='VA'>VA</option>
+									<option value='VT'>VT</option>
+									<option value='WA'>WA</option>
+									<option value='WI'>WI</option>
+									<option value='WV'>WV</option>
+									<option value='WY'>WY</option>
+									<option value='YT'>YT</option>
+								</select>
+							</td>
+						</tr>  -->
+					
+						<tr>
+							<td class="span2 last"></td>
+							<td class="span5 last"><button id="submit-button" class="btn btn-lg btn-primary span4" type="submit">Submit</button></td>
+						</tr>
+				   </table>
+		  
+			  </form>
+			</div>	
+		</div>
+	</div>	
+
+	 
+<br /><br />
+     <!-- /container -->
+    
+    <div class="free-ap-registration free-ap-footer">
+    	<div class="container">
+    			
+    			
+    				<div class="line clearfix">
+    					<div class="span4 first">&copy; 2015 Aerohive Networks, Inc.</div>
+    					<div class="span8 last" style="float: right;">
+							<ul class="AH-links">
+								<li><a href="http://www.aerohive.com/products">Products</a></li>
+								<li><a href="http://www.aerohive.com/solutions/solution-overview">Solutions</a></li>
+								<li><a href="http://www.aerohive.com/resources">Resources</a></li>
+								<li><a href="http://www.aerohive.com/support/support-overview">Support</a></li>
+								<li><a href="http://www.aerohive.com/partners/partner-overview">Partners</a></li>
+								<li><a href="http://www.aerohive.com/company/about-aerohive">Company</a></li>
+								<li><a href="http://www.aerohive.com/build-your-network/evaluate-buy">How to Buy</a></li>
+								<li><a href="http://www.aerohive.com/contact-us">Contact</a></li>
+								<li><a href="http://www.aerohive.com/privacy">Privacy</a></li>
+							</ul>
+						</div>
+					</div>	
+    				<div class="line clearfix">
+						<ul class="social">	
+							<li><a href="http://www.aerohive.com/rss/aerohive_rss1.xml" target="_blank" class="social-icons rss-icon"></a></li>
+							<li><a href="https://www.facebook.com/pages/Aerohive-Networks/113724428686506" target="_blank" class="social-icons facebook-icon"></a></li>
+							<li><a href="https://twitter.com/aerohive" target="_blank"  class="social-icons twitter-icon"></a></li>
+							<li><a href="http://www.linkedin.com/groups?homeNewMember=&amp;gid=1900882&amp;trk=&amp;fromEmail=&amp;ut=12CV4ulIHIlC01" target="_blank"  class="social-icons linkedin-icon"></a></li>
+						</ul>
+					</div>	
+
+    		</div>
+    	
+    </div>
+
+    <script type="text/javascript" src="freeAPRegistration_files/registration.js"></script>
+</body>
+</html>
