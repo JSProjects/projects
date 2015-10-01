@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+    <head>
+        <title>${title}</title>
+        <style>
+            html {
+            font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            ${title}<br />
+        </h1>
+        
+         #if($successList && $successList.size() > 0)
+            <h2>
+                Verified Success(Total:$successList.size()):<br />
+            </h2>
+            <p style="text-indent:2em;">
+                <table border="1" bordercolor="#000000" cellpadding="2" cellspacing="0" height="70" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Admin Email</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>CID</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>VHM ID</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>VHM Name</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>SF Account ID</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>API Call Time</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>Verification Time</strong>
+                                <br />
+                            </td>
+                        </tr>
+                        #foreach($successItem in $successList) 
+                            <tr>
+                                <td>
+                                    $!successItem.adminEmail
+                                </td>
+                                <td>
+                                    $!successItem.cid
+                                </td>
+                                <td>
+                                    $!successItem.vhmId
+                                </td>
+                                <td>
+                                    $!successItem.vhmName
+                                </td>
+                                <td>
+                                    $!successItem.sfaccountId
+                                </td>
+                                <td>
+                                    $!successItem.apiCallTime
+                                </td>
+                                <td>
+                                    $!successItem.verificationTime
+                                </td>
+                            </tr>
+                        #end
+                    </tbody>
+                </table>
+            </p>
+         #end
+         
+          #if($abnormalList && $abnormalList.size() > 0)
+            <h2>
+                Verified Abnormal:
+            </h2>
+            <h4>Error Code: 9000 (Total:$abnormalList.size())</h4>
+            <span>(Successfully Called API, but CID sync-up failed, the CID does not exsit in Portal DataBase)</span>
+            <p>
+                <table border="1" bordercolor="#000000" cellpadding="2" cellspacing="0" height="70" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Admin Email</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>CID</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>VHM ID</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>VHM Name</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>SF Account ID</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>API Call Time</strong>
+                                <br />
+                            </td>
+                            <td>
+                                <strong>Verification Time</strong>
+                                <br />
+                            </td>
+                        </tr>
+                        #foreach($abnormalItem in $abnormalList) 
+                            <tr>
+                                <td>
+                                    $!abnormalItem.adminEmail
+                                </td>
+                                <td>
+                                    $!abnormalItem.cid
+                                </td>
+                                <td>
+                                    $!abnormalItem.vhmId
+                                </td>
+                                <td>
+                                    $!abnormalItem.vhmName
+                                </td>
+                                <td>
+                                    $!abnormalItem.sfaccountId
+                                </td>
+                                <td>
+                                    $!abnormalItem.apiCallTime
+                                </td>
+                                <td>
+                                    $!abnormalItem.verificationTime
+                                </td>
+                            </tr>
+                        #end
+                    </tbody>
+                </table>
+            </p>
+        #end
+         
+        #if($failedGroupMap && (${failedGroupMap.keySet().size()} > 0))
+            <h2>
+                Called API Failed:
+            </h2>
+            #foreach($key in ${failedGroupMap.keySet()})  
+                #set($failedGroup = ${failedGroupMap.get($key)})
+                <h4>$failedGroup.title</h4>
+                <p style="text-indent:2em;">
+                    <table style="width:100%;" border="1" bordercolor="#000000" cellpadding="2" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Admin Email</strong>
+                                    <br />
+                                </td>
+                                <td>
+                                    <strong>VHM ID</strong>
+                                    <br />
+                                </td>
+                                <td>
+                                    <strong>VHM Name</strong>
+                                    <br />
+                                </td>
+                                <td>
+                                    <strong>Error Message</strong>
+                                    <br />
+                                </td>
+                                <td>
+                                    <strong>API Call Time</strong>
+                                    <br />
+                                </td>
+                            </tr>
+                            #foreach($failedItem in ${failedGroup.failedItemList}) 
+                                <tr>
+                                    <td>
+                                        $!failedItem.adminEmail
+                                    </td>
+                                    <td>
+                                        $!failedItem.vhmId
+                                    </td>
+                                    <td>
+                                        $!failedItem.vhmName
+                                    </td>
+                                    <td>
+                                        $!failedItem.errorMsg
+                                    </td>
+                                    <td>
+                                        $!failedItem.apiCallTime
+                                    </td>
+                                </tr>
+                            #end
+                        </tbody>
+                    </table>
+                </p>
+            #end  
+        #end
+       
+       
+        <p>
+            <br />
+        </p>
+        <p style="text-indent:2em;">
+            <br />
+        </p>
+    </body>
+</html>
